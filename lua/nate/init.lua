@@ -1,2 +1,2 @@
 require("nate.remap")
-print("Nate")
+require("nate.set")

@@ -7,9 +7,28 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 -- here you can setup the language servers
-require'lspconfig'.tsserver.setup({})
-require'lspconfig'.phpactor.setup({})
+require'lspconfig'.tsserver.setup{}
+--require'lspconfig'.phpactor.setup{}
+require'lspconfig'.eslint.setup{}
+--require'lspconfig'.lua_ls.setup{}
+--require'lspconfig'.java_language_server.setup{}
 
--- You must make sure volar is setup
--- e.g. require'lspconfig'.volar.setup{}
--- See volar's section for more information
+-- Setup `nvim-cmp`
+local cmp = require('cmp')
+
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn['vsnip#anonymous'](args.body)  -- Change depending on your snippet engine
+        end,
+    },
+    mapping = {
+        ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' },  -- Adjust based on your snippet engine
+    }),
+})
