@@ -43,4 +43,6 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+  use('ThePrimeagen/vim-be-good')
+  use('m4xshen/hardtime.nvim')
 end)

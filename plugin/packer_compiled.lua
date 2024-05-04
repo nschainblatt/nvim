@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Nate\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["hardtime.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Nate\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hardtime.nvim",
+    url = "https://github.com/m4xshen/hardtime.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "C:\\Users\\Nate\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\harpoon",
@@ -144,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Nate\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "C:\\Users\\Nate\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
   },
   ["vim-fugitive"] = {
     loaded = true,
