@@ -1,7 +1,12 @@
---vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 
 vim.opt.nu = true
+
+-- Set both absolute and relative line numbers
+vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -29,3 +34,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+vim.opt.clipboard = "unnamed"
