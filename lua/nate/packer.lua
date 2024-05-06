@@ -23,45 +23,63 @@ return require('packer').startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
-  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+  use "nvim-lua/plenary.nvim"
 
+  -- Useful
   use {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     requires = { {"nvim-lua/plenary.nvim"} }
   }
 
+  -- Cool
   use('mbbill/undotree')
 
+  -- Git integration
   use('tpope/vim-fugitive')
 
+  -- Git blame
   use('lewis6991/gitsigns.nvim')
 
---  use {
---    'VonHeikemen/lsp-zero.nvim',
---    branch = 'v3.x',
---    requires = {
---      --- Uncomment the two plugins below if you want to manage the language servers from neovim
---      -- {'williamboman/mason.nvim'},
---      -- {'williamboman/mason-lspconfig.nvim'},
---
---      {'neovim/nvim-lspconfig'},
---      {'hrsh7th/nvim-cmp'},
---      {'hrsh7th/cmp-nvim-lsp'},
---      {'L3MON4D3/LuaSnip'},
---    }
---  }
-
+  -- You already know
   use('ThePrimeagen/vim-be-good')
 
+  -- Force correct vim motions
   use('m4xshen/hardtime.nvim')
 
+  -- lsp server management 
   use{
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'nvim/nvim-dap',
-    requires = {
-      'neovim/nvim-lspconfig'
-    }
+    'neovim/nvim-lspconfig',
+    'WhoIsSethDaniel/mason-tool-installer.nvim'
+  }
+
+  -- Auto completion
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-buffer')
+  use('hrsh7th/cmp-path')
+  use('hrsh7th/cmp-cmdline')
+  use('hrsh7th/nvim-cmp')
+
+  -- Display the pending nvim command
+  -- Lua
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
   }
 end)
